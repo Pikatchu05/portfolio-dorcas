@@ -2,14 +2,14 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   :root {
-    --primary-color: #5e7ce2; /* Bleu plus doux */
-    --secondary-color: #7f8de1; /* Violet plus doux */
-    --accent-color: #3a5fba; /* Bleu accent plus doux */
+    --primary-color: #00ccff; /* Bleu cyan high-tech */
+    --secondary-color: #2b4b8c; /* Bleu profond */
+    --accent-color: #ff00dd; /* Accent magenta futuriste */
     --background-color: transparent;
     --light-gray: #f0f4f8;
-    --text-color: #2d3748;
-    --text-light: #4a5568;
-    --shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    --text-color: #ffffff;
+    --text-light: rgba(255, 255, 255, 0.7);
+    --shadow: 0 4px 20px rgba(0, 200, 255, 0.15);
     --transition: all 0.3s ease;
   }
 

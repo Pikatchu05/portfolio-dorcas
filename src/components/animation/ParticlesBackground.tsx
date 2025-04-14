@@ -8,8 +8,8 @@ const Canvas = styled.canvas`
   width: 100%;
   height: 100%;
   z-index: -1;
-  opacity: 0.8;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  opacity: 0.9;
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a40 100%);
 `;
 
 interface CodeLine {
@@ -41,8 +41,8 @@ const CodeBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const codeLines: CodeLine[] = [];
   const uiElements: UIElement[] = [];
-  const codeColors = ['#0f0', '#00ffff', '#0088ff', '#66ff66', '#ffffff'];
-  const uiColors = ['#4a93ff', '#6b9bd1', '#ffffff', '#66ff66', '#ff6b6b'];
+  const codeColors = ['#0f9', '#00e6ff', '#0088ff', '#66f9ff', '#ffffff'];
+  const uiColors = ['#4a93ff', '#00e6ff', '#ffffff', '#66ffee', '#ff00dd'];
   
   // Code snippets
   const codeSnippets = [
@@ -256,9 +256,31 @@ const CodeBackground: React.FC = () => {
     });
   };
 
+    const drawGrid = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) => {
+    ctx.strokeStyle = 'rgba(100, 220, 255, 0.08)';
+    ctx.lineWidth = 1;
+    
+    // Grid lines
+    const gridSize = 40;
+    for (let x = 0; x < canvas.width; x += gridSize) {
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, canvas.height);
+      ctx.stroke();
+    }
+    
+    for (let y = 0; y < canvas.height; y += gridSize) {
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(canvas.width, y);
+      ctx.stroke();
+    }
+  };
+
   const animate = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
+    drawGrid(ctx, canvas);
     animateCodeLines(ctx, canvas);
     animateUIElements(ctx, canvas);
     

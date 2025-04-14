@@ -26,7 +26,7 @@ const HeroSection: React.FC = () => {
               duration={500}
               offset={-70}
             >
-              Voir mes projets
+              Projets
             </PrimaryButton>
             <SecondaryButton
               to="contact"
@@ -34,7 +34,7 @@ const HeroSection: React.FC = () => {
               duration={500}
               offset={-70}
             >
-              Me contacter
+              Contact
             </SecondaryButton>
           </ButtonContainer>
         </motion.div>
@@ -59,7 +59,6 @@ const HeroContainer = styled.section`
   align-items: center;
   background: transparent;
   position: relative;
-  padding: 0 1rem;
 `;
 
 const HeroContent = styled.div`
@@ -69,26 +68,15 @@ const HeroContent = styled.div`
   width: 90%;
 `;
 
-const Greeting = styled.p`
-  font-size: 1.7rem;
-  color: var(--primary-color);
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-  background: rgba(0, 0, 0, 0.3);
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  display: inline-block;
-`;
+
 
 const Name = styled.h1`
-  font-size: 5rem;
+  font-size: 6rem;
   font-weight: 800;
   margin-bottom: 1rem;
   color: white;
-  text-shadow: 0 0 15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 120, 255, 0.6);
+  text-shadow: 0 0 15px rgba(0, 200, 255, 0.6);
   letter-spacing: 2px;
-  -webkit-text-stroke: 1px var(--primary-color);
   
   @media screen and (max-width: 768px) {
     font-size: 3.5rem;
@@ -96,33 +84,19 @@ const Name = styled.h1`
 `;
 
 const Title = styled.h2`
-  font-size: 2.2rem;
+  font-size: 3rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
-  color: #ffffff;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-  background: rgba(0, 0, 0, 0.3);
-  padding: 0.5rem 1.5rem;
-  border-radius: 8px;
-  display: inline-block;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, #4ae0ff, var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   
   @media screen and (max-width: 768px) {
-    font-size: 1.7rem;
+    font-size: 2rem;
   }
 `;
 
-const Description = styled.p`
-  font-size: 1.3rem;
-  max-width: 600px;
-  margin: 0 auto 2rem;
-  color: #ffffff;
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
-  background: rgba(0, 0, 0, 0.2);
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 500;
-  line-height: 1.5;
-`;
+
 
 const ButtonContainer = styled.div`
   display: flex;
@@ -139,32 +113,38 @@ const ButtonContainer = styled.div`
 const PrimaryButton = styled(Link)`
   background-color: var(--primary-color);
   color: white;
-  padding: 0.8rem 1.5rem;
-  border-radius: 5px;
-  font-weight: 500;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
   transition: var(--transition);
   cursor: pointer;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   
   &:hover {
     background-color: var(--accent-color);
     transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
 `;
 
 const SecondaryButton = styled(Link)`
   background-color: transparent;
   color: var(--primary-color);
-  padding: 0.8rem 1.5rem;
-  border-radius: 5px;
-  font-weight: 500;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
   border: 2px solid var(--primary-color);
   transition: var(--transition);
   cursor: pointer;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   
   &:hover {
     background-color: var(--primary-color);
     color: white;
     transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
 `;
 
@@ -175,6 +155,7 @@ const ScrollDown = styled(Link)`
   color: var(--primary-color);
   animation: bounce 2s infinite;
   cursor: pointer;
+  filter: drop-shadow(0 0 8px var(--primary-color));
   
   @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
